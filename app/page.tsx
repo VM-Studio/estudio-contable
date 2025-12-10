@@ -1,137 +1,63 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export default function Home() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % 2);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + 2) % 2);
-  };
-
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
       
       <main className="grow">
-        {/* Hero Section - Carousel */}
-        <section className="relative bg-white">
-          <div className="relative min-h-[500px]">
-            {/* Slide 1 - Original */}
-            <div className={`absolute inset-0 transition-opacity duration-500 ${currentSlide === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
-              <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px] max-w-7xl mx-auto">
-                  {/* Left Side - Content */}
-                  <div className="flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-16">
-                    <h1 className="text-5xl md:text-6xl font-serif font-bold text-gray-900 mb-6 leading-tight whitespace-nowrap">
-                      Estudio Contable
-                    </h1>
-                    <p className="text-xl text-gray-600 mb-8 leading-relaxed font-light">
-                      Servicios contables profesionales con más de 20 años de experiencia
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4">
-                      <Link 
-                        href="/contacto"
-                        className="text-white px-8 py-3 rounded-lg transition-colors font-serif font-medium text-center hover:opacity-90"
-                        style={{ backgroundColor: '#4e4485' }}
-                      >
-                        Contactar
-                      </Link>
-                      <Link 
-                        href="/servicios"
-                        className="bg-white text-gray-900 px-8 py-3 rounded-lg border-2 transition-colors font-serif font-medium text-center hover:border-opacity-80"
-                        style={{ borderColor: '#ffa6bf' }}
-                      >
-                        Ver Servicios
-                      </Link>
-                    </div>
-                  </div>
-                  
-                  {/* Right Side - Image */}
-                  <div className="relative h-full min-h-[400px] lg:min-h-[500px]">
-                    <Image 
-                      src="/herouno.png" 
-                      alt="Estudio Carrizo" 
-                      fill
-                      className="object-cover object-right"
-                      priority
-                    />
-                  </div>
+        {/* Hero Section - Simple */}
+        <section className="bg-white py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left Side - Content */}
+              <div>
+                <h1 className="text-5xl md:text-6xl font-serif font-bold text-gray-900 mb-6 leading-tight">
+                  Estudio Contable Profesional
+                </h1>
+                <p className="text-xl text-gray-600 mb-8 leading-relaxed font-light">
+                  Más de 20 años brindando servicios contables, impositivos y de asesoramiento 
+                  empresarial con excelencia y compromiso.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link 
+                    href="/contacto"
+                    className="text-white px-8 py-4 rounded-lg transition-opacity font-serif font-medium text-center hover:opacity-90"
+                    style={{ backgroundColor: '#4e4485' }}
+                  >
+                    Contactar
+                  </Link>
+                  <Link 
+                    href="/servicios"
+                    className="bg-white px-8 py-4 rounded-lg border-2 transition-all font-serif font-medium text-center hover:bg-gray-50"
+                    style={{ borderColor: '#ffa6bf', color: '#4e4485' }}
+                  >
+                    Ver Servicios
+                  </Link>
                 </div>
               </div>
-
-              {/* Slide 2 - Background Image with Text Overlay */}
-              <div className={`absolute inset-0 transition-opacity duration-500 ${currentSlide === 1 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
-                <div className="relative min-h-[500px]">
-                  {/* Background Image */}
-                  <div className="absolute inset-0">
-                    <Image
-                      src="/herodos.png"
-                      alt="Contadores Especializados"
-                      fill
-                      className="object-cover"
-                      priority
-                    />
-                  </div>
-                  
-                  {/* Content - Left Side with Gradient Overlay */}
-                  <div className="relative h-full min-h-[500px] flex items-center px-8 sm:px-12 lg:px-16">
-                    <div className="max-w-xl relative">
-                      {/* Gradient overlay only behind text */}
-                      <div className="absolute inset-0 -inset-x-8 -inset-y-8 bg-linear-to-r from-white/70 to-transparent rounded-lg"></div>
-                      
-                      {/* Content */}
-                      <div className="relative">
-                        <h1 className="text-5xl md:text-6xl font-serif font-bold text-gray-900 mb-6 leading-tight text-left">
-                          Contadores especializados para resolver áreas impositivas
-                        </h1>
-                        <Link 
-                          href="/contacto"
-                          className="inline-block text-white px-8 py-3 rounded-lg transition-opacity font-serif font-medium hover:opacity-90"
-                          style={{ backgroundColor: '#4e4485' }}
-                        >
-                          Contactanos
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              
+              {/* Right Side - Image */}
+              <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl">
+                <Image 
+                  src="/herouno.png" 
+                  alt="Estudio Contable" 
+                  fill
+                  className="object-cover"
+                  priority
+                />
               </div>
-
-              {/* Navigation Arrows */}
-              <button
-                onClick={prevSlide}
-                className="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full flex items-center justify-center transition-all hover:bg-opacity-30"
-                style={{ backgroundColor: 'rgba(78, 68, 133, 0.2)' }}
-                aria-label="Anterior"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="#4e4485" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-
-              <button
-                onClick={nextSlide}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full flex items-center justify-center transition-all hover:bg-opacity-30"
-                style={{ backgroundColor: 'rgba(78, 68, 133, 0.2)' }}
-                aria-label="Siguiente"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="#4e4485" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
             </div>
+          </div>
         </section>
 
         {/* Services Section */}
-        <section className="py-20 pb-10 bg-white">
+        <section className="py-20 pb-10 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-serif font-bold text-gray-900 mb-4">
@@ -336,8 +262,109 @@ export default function Home() {
           </div>
         </section>
 
+        {/* FAQs Section */}
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-serif font-bold text-gray-900 mb-4">
+                Preguntas Frecuentes
+              </h2>
+              <p className="text-lg text-gray-600 font-light">
+                Respondemos las dudas más comunes sobre nuestros servicios
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <details className="group bg-white rounded-xl p-6 shadow-sm border-l-4" style={{ borderColor: '#4e4485' }}>
+                <summary className="flex justify-between items-center cursor-pointer list-none">
+                  <span className="font-serif font-semibold text-gray-900 text-lg">
+                    ¿Ofrecen una primera consulta gratuita?
+                  </span>
+                  <span className="transition group-open:rotate-180">
+                    <svg className="w-5 h-5" fill="none" stroke="#4e4485" strokeWidth="2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </span>
+                </summary>
+                <p className="mt-4 text-gray-600 font-light leading-relaxed">
+                  Sí, ofrecemos una primera consulta sin cargo para conocer tus necesidades y elaborar 
+                  una propuesta personalizada adaptada a tu situación empresarial o personal.
+                </p>
+              </details>
+
+              <details className="group bg-white rounded-xl p-6 shadow-sm border-l-4" style={{ borderColor: '#ffa6bf' }}>
+                <summary className="flex justify-between items-center cursor-pointer list-none">
+                  <span className="font-serif font-semibold text-gray-900 text-lg">
+                    ¿Qué tipo de empresas atienden?
+                  </span>
+                  <span className="transition group-open:rotate-180">
+                    <svg className="w-5 h-5" fill="none" stroke="#ffa6bf" strokeWidth="2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </span>
+                </summary>
+                <p className="mt-4 text-gray-600 font-light leading-relaxed">
+                  Trabajamos con monotributistas, responsables inscriptos, personas físicas y todo tipo de sociedades. 
+                  Nos adaptamos a las necesidades de cada cliente, desde emprendedores hasta empresas consolidadas.
+                </p>
+              </details>
+
+              <details className="group bg-white rounded-xl p-6 shadow-sm border-l-4" style={{ borderColor: '#4e4485' }}>
+                <summary className="flex justify-between items-center cursor-pointer list-none">
+                  <span className="font-serif font-semibold text-gray-900 text-lg">
+                    ¿Cuáles son los horarios de atención?
+                  </span>
+                  <span className="transition group-open:rotate-180">
+                    <svg className="w-5 h-5" fill="none" stroke="#4e4485" strokeWidth="2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </span>
+                </summary>
+                <p className="mt-4 text-gray-600 font-light leading-relaxed">
+                  Nuestro horario de atención es de lunes a viernes de 9:00 a 18:00 hs. 
+                  También podés contactarnos por email o WhatsApp y te responderemos a la brevedad.
+                </p>
+              </details>
+
+              <details className="group bg-white rounded-xl p-6 shadow-sm border-l-4" style={{ borderColor: '#ffa6bf' }}>
+                <summary className="flex justify-between items-center cursor-pointer list-none">
+                  <span className="font-serif font-semibold text-gray-900 text-lg">
+                    ¿Realizan liquidación de sueldos?
+                  </span>
+                  <span className="transition group-open:rotate-180">
+                    <svg className="w-5 h-5" fill="none" stroke="#ffa6bf" strokeWidth="2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </span>
+                </summary>
+                <p className="mt-4 text-gray-600 font-light leading-relaxed">
+                  Sí, ofrecemos servicios laborales completos incluyendo liquidación de sueldos, altas y bajas de empleados, 
+                  obras sociales, ART y cumplimiento de todas las normativas laborales vigentes.
+                </p>
+              </details>
+
+              <details className="group bg-white rounded-xl p-6 shadow-sm border-l-4" style={{ borderColor: '#4e4485' }}>
+                <summary className="flex justify-between items-center cursor-pointer list-none">
+                  <span className="font-serif font-semibold text-gray-900 text-lg">
+                    ¿Cómo puedo empezar a trabajar con ustedes?
+                  </span>
+                  <span className="transition group-open:rotate-180">
+                    <svg className="w-5 h-5" fill="none" stroke="#4e4485" strokeWidth="2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </span>
+                </summary>
+                <p className="mt-4 text-gray-600 font-light leading-relaxed">
+                  Es muy simple: contactanos por teléfono, email o a través del formulario de contacto. 
+                  Coordinamos una primera reunión para conocer tus necesidades y te presentamos una propuesta personalizada.
+                </p>
+              </details>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-serif font-bold text-gray-900 mb-4">
               ¿Listo para optimizar tu gestión contable?

@@ -17,7 +17,7 @@ export default function NosotrosPage() {
               <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">
                 Más de 20 años de experiencia brindando servicios contables de excelencia
               </p>
-              <div className="w-24 h-1 mx-auto mt-6" style={{ backgroundColor: '#ffa6bf' }}></div>
+              <div className="w-24 h-1 mx-auto mt-6" style={{ backgroundColor: '#ff85ab' }}></div>
             </div>
           </div>
         </section>
@@ -55,7 +55,7 @@ export default function NosotrosPage() {
 
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: 'rgba(255, 166, 191, 0.1)' }}>
-                      <svg className="w-6 h-6" fill="none" stroke="#ffa6bf" strokeWidth="2" viewBox="0 0 24 24">
+                      <svg className="w-6 h-6" fill="none" stroke="#ff85ab" strokeWidth="2" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>

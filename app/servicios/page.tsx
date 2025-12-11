@@ -2,47 +2,58 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ServiceCard from '@/components/ServiceCard';
 import { Service } from '@/types';
+import Image from 'next/image';
 
 const services: Service[] = [
   {
     id: '1',
-    title: 'Contabilidad General',
-    description: 'Llevamos la contabilidad completa de tu empresa, desde el registro de operaciones hasta la elaboración de estados contables. Garantizamos el cumplimiento de todas las normativas vigentes y te brindamos información financiera clara y precisa para la toma de decisiones.',
+    title: 'Monotributo',
+    description: 'Asesoramiento integral para monotributistas. Inscripción, recategorización, facturación electrónica y cumplimiento de todas las obligaciones del régimen simplificado.',
   },
   {
     id: '2',
-    title: 'Auditoría',
-    description: 'Realizamos auditorías internas y externas con los más altos estándares profesionales. Analizamos tus procesos y controles internos para identificar oportunidades de mejora y garantizar la transparencia de tus operaciones financieras.',
+    title: 'Responsable Inscripto',
+    description: 'Gestión completa para responsables inscriptos en IVA. Liquidación de impuestos, presentación de declaraciones juradas y optimización de la carga tributaria.',
   },
   {
     id: '3',
-    title: 'Impuestos',
-    description: 'Asesoramiento integral en materia impositiva. Te ayudamos con la planificación tributaria, liquidación de impuestos (IVA, Ganancias, Bienes Personales, etc.), presentación de declaraciones juradas y representación ante organismos fiscales.',
+    title: 'Personas Físicas y Sociedades',
+    description: 'Servicios contables e impositivos para personas físicas y sociedades comerciales. Desde la constitución hasta la gestión diaria de obligaciones fiscales.',
   },
   {
     id: '4',
-    title: 'Asesoramiento Empresarial',
-    description: 'Consultoría estratégica para el crecimiento de tu negocio. Análisis financiero, presupuestos, proyecciones, evaluación de proyectos de inversión y apoyo en la toma de decisiones empresariales importantes.',
+    title: 'Liquidación de Impuestos',
+    description: 'Liquidación profesional de todos los impuestos nacionales, provinciales y municipales. IVA, Ganancias, Bienes Personales, Ingresos Brutos y más.',
   },
   {
     id: '5',
-    title: 'Liquidación de Sueldos',
-    description: 'Gestión completa de nóminas y liquidaciones de haberes. Nos ocupamos del cálculo de salarios, cargas sociales, aguinaldos, vacaciones, presentación de formularios 931 y toda la documentación laboral necesaria.',
+    title: 'Servicios Laborales',
+    description: 'Gestión completa de nóminas y liquidaciones de haberes. Altas, bajas, cargas sociales, aguinaldos, vacaciones y toda la documentación laboral necesaria.',
   },
   {
     id: '6',
-    title: 'Constitución de Sociedades',
-    description: 'Te acompañamos en todo el proceso de creación de tu empresa. Asesoramiento en la elección del tipo societario más conveniente, redacción de estatutos, inscripción registral y todos los trámites necesarios para iniciar tu actividad.',
+    title: 'Seguros',
+    description: 'Asesoramiento en seguros de ART, vida obligatorio, y otros seguros necesarios para el cumplimiento de obligaciones laborales y comerciales.',
   },
   {
     id: '7',
-    title: 'Reorganizaciones Societarias',
-    description: 'Asesoramiento en fusiones, escisiones, transformaciones y otros procesos de reorganización empresarial. Análisis de viabilidad, aspectos legales, contables e impositivos.',
+    title: 'Administración',
+    description: 'Servicios de administración de empresas. Gestión de cuentas, conciliaciones bancarias, control de pagos y cobros, y organización administrativa.',
   },
   {
     id: '8',
-    title: 'Pericias Contables',
-    description: 'Servicios periciales para procesos judiciales y arbitrajes. Elaboración de informes técnicos, valuaciones de empresas y análisis de documentación contable.',
+    title: 'Recursos Humanos',
+    description: 'Asesoramiento en gestión de recursos humanos. Contratos de trabajo, convenios colectivos, conflictos laborales y optimización de la gestión del personal.',
+  },
+  {
+    id: '9',
+    title: 'Jurídico Tributario',
+    description: 'Asesoramiento legal en materia tributaria. Defensa ante fiscalizaciones, recursos de apelación, planes de pago y representación ante organismos fiscales.',
+  },
+  {
+    id: '10',
+    title: 'Otros',
+    description: 'Servicios adicionales personalizados según las necesidades específicas de cada cliente. Consultoría, auditoría, pericias contables y más.',
   },
 ];
 
@@ -56,10 +67,20 @@ export default function ServiciosPage() {
         <section className="bg-gray-50 py-12 border-b border-gray-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-4xl font-bold text-gray-900 mb-4">
-                Nuestros Servicios
-              </h1>
-              <p className="text-gray-600 max-w-2xl mx-auto">
+              <div className="flex items-center justify-center gap-4 mb-4">
+                <h1 className="text-4xl font-serif font-bold text-gray-900">
+                  Nuestros Servicios
+                </h1>
+                <Image 
+                  src="/icono-doc.gif" 
+                  alt="Servicios" 
+                  width={70}
+                  height={70}
+                  className="object-contain"
+                  unoptimized
+                />
+              </div>
+              <p className="text-gray-600 max-w-2xl mx-auto font-light">
                 Ofrecemos una completa gama de servicios contables y de asesoramiento empresarial
               </p>
             </div>
@@ -80,15 +101,16 @@ export default function ServiciosPage() {
         {/* CTA Section */}
         <section className="py-16 bg-gray-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl font-serif font-bold text-gray-900 mb-4">
               ¿No encontrás lo que buscás?
             </h2>
-            <p className="text-gray-600 mb-8">
+            <p className="text-gray-600 mb-8 font-light">
               Contactanos para una consulta personalizada.
             </p>
             <a 
               href="/contacto"
-              className="inline-block bg-gray-900 text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition-colors font-medium"
+              className="inline-block text-white px-8 py-3 rounded-lg transition-opacity hover:opacity-90 font-serif font-medium"
+              style={{ backgroundColor: '#4e4485' }}
             >
               Consultar Ahora
             </a>

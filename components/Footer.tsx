@@ -10,13 +10,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Columna 1: Logo e Información */}
           <div className="md:col-span-2">
-            <div className="mb-4">
+            <div className="mb-6">
               <Image 
-                src="/navbaruno.png" 
+                src="/logo.png" 
                 alt="Estudio Carrizo" 
                 width={180}
                 height={45}
-                className="h-12 w-auto brightness-0 invert"
+                className="h-12 w-auto"
               />
             </div>
             <p className="text-sm mb-4 leading-relaxed font-light">
@@ -39,7 +39,7 @@ export default function Footer() {
                 href="https://instagram.com" 
                 target="_blank"
                 className="w-10 h-10 rounded-full flex items-center justify-center transition-colors hover:opacity-80"
-                style={{ backgroundColor: '#ffa6bf' }}
+                style={{ backgroundColor: '#ff85ab' }}
                 aria-label="Instagram"
               >
                 <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">

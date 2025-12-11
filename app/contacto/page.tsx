@@ -19,7 +19,7 @@ export default function ContactoPage() {
               <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">
                 Estamos aquí para ayudarte. Primera consulta gratuita
               </p>
-              <div className="w-24 h-1 mx-auto mt-6" style={{ backgroundColor: '#ffa6bf' }}></div>
+              <div className="w-24 h-1 mx-auto mt-6" style={{ backgroundColor: '#ff85ab' }}></div>
             </div>
           </div>
         </section>
@@ -171,10 +171,10 @@ export default function ContactoPage() {
                     </div>
                   </div>
                   
-                  <div className="bg-white p-6 rounded-xl border-l-4 shadow-sm" style={{ borderColor: '#ffa6bf' }}>
+                  <div className="bg-white p-6 rounded-xl border-l-4 shadow-sm" style={{ borderColor: '#ff85ab' }}>
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: 'rgba(255, 166, 191, 0.1)' }}>
-                        <svg className="w-6 h-6" fill="none" stroke="#ffa6bf" strokeWidth="2" viewBox="0 0 24 24">
+                        <svg className="w-6 h-6" fill="none" stroke="#ff85ab" strokeWidth="2" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                         </svg>
                       </div>
@@ -203,10 +203,10 @@ export default function ContactoPage() {
                     </div>
                   </div>
                   
-                  <div className="bg-white p-6 rounded-xl border-l-4 shadow-sm" style={{ borderColor: '#ffa6bf' }}>
+                  <div className="bg-white p-6 rounded-xl border-l-4 shadow-sm" style={{ borderColor: '#ff85ab' }}>
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: 'rgba(255, 166, 191, 0.1)' }}>
-                        <svg className="w-6 h-6" fill="none" stroke="#ffa6bf" strokeWidth="2" viewBox="0 0 24 24">
+                        <svg className="w-6 h-6" fill="none" stroke="#ff85ab" strokeWidth="2" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </div>
